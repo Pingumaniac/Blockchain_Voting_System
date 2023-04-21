@@ -65,7 +65,7 @@ pip3 install Werkzeug
 
 #### We will use Heroku to deploy the Flask. Note that:
  1. Git must be installed since Heroku uses Git. Please install Git from this website unless you have already installed: https://git-scm.com/downloads
- 2. Python must be installed to use Flask. Please install Python 3.8.10 from this website unless you have already installed: https://www.python.org/downloads/
+ 2. Python must be installed to use Flask. Please install Python 3.11.2 from this website unless you have already installed: https://www.python.org/downloads/
 
 #### To install Heroku,
  1. Open the Heroku website. Here is the link for the Heroku website: https://www.heroku.com/
