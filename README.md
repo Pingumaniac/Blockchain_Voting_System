@@ -9,11 +9,11 @@ CS 6381 Distributed Systems Principles Final Project
 
 #### Alex Richardson
 * M.Sc./Ph.D. in computer science and Engineering Graduate Fellowship recipient at Vanderbilt University.
-* Email:
+* Email: william.a.richardson@vanderbilt.edu
 
 #### Azhar Hasan
 * M.Sc./Ph.D. in computer science and Engineering Graduate Fellowship recipient at Vanderbilt University.
-* Email:
+* Email: azhar.hasan@vanderbilt.edu
 
 ## Advisor
 
