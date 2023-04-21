@@ -38,7 +38,7 @@ CS 6381 Distributed Systems Principles Final Project
 1. Flask-Bootstrap (v3.3.7.1)
 2. Gunicorn (v20.1.0)
 3. PyMySQL (v1.0.3)
-4. WerkZeug (v1.0.1)
+4. WerkZeug (v2.2.3)
 
 ## Instructions for checking out the latest stable version
 
