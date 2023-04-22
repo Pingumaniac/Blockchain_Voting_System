@@ -1,5 +1,5 @@
-# Blockchain_Voting_System
-CS 6381 Distributed Systems Principles Final Project
+# Name of the app: Simayi
+CS 6381 Distributed Systems Principles Final Project - An implementation of a web-based blockchain voting system.
 
 ## About Members and Roles
 
@@ -19,6 +19,24 @@ CS 6381 Distributed Systems Principles Final Project
 
 #### Professor Aniruddha Gokhale
 * Professor of Computer Science at Vanderbilt University
+
+## Project Goals
+
+We will implement a web-based blockchain voting system that 
+1. allows for people to create arbitrary elections and answer them
+2. while storing the information in several redundant nodes as per a standard blockchain with each block in the chain either a created election or a user casting vote
+3. with several backend nodes maintaining chains separately
+4. heavily based on the original bitcoin paper for simplicity.
+
+## Key Performance Indicators (KPI)
+
+1. Blockchain chain agreement
+2. Performance
+3. Decentralisation
+4. Load balancing
+5. Validation of System Reliability with Malicious Nodes
+6. Transparency
+7. Consensus
 
 ## Tools and technologies
 
@@ -70,7 +88,12 @@ pip3 install Werkzeug
 ## How to test this software
 
 * TBU
+* If you have decided to run the software in your local terminal, please move to the right folder and then enter the following:
+```
+python3 app.py
+```
 * Now, you can test various functionalities and non-functional requirements. 
+* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/Blockchain_Voting_System/issues
 
 ## Bug tracking
 
