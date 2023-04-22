@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section>
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="list-group shadow">
+          <div class="list-group-item">
+            <h1 class="text-center">Sign in</h1>
+            <br>
+            <form class="form-inline" , method="POST" , action="{{ url_for('signin') }}">
+              <!-- UserName -->
+              <div class="form-group">
+                <label class="form-label" for="id"> Your username </label>
+                <input type="text" class="form-control form-control-sm" name="userName" id="userName"
+                  placeholder="Enter your username" />
+              </div>
+
+              <!-- Password -->
+              <div class="form-group">
+                <label class="form-label" for="password">Your password </label>
+                <input type="password" class="form-control form-control-sm" id="password" name="password"
+                  placeholder="Enter your password" />
+              </div>
+              <br>
+              
+              <!-- Buttons -->
+              <div class="form-group">
+                <button class="btn btn-sm w-100 btn-success lift" type="submit">Sign in</button>
+                <br>
+                <br>
+                <a href="{{ url_for('signup') }}">
+                  <button class="btn btn-sm w-100 btn-outline-secondary lift" type="button">Sign up</button>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%}
