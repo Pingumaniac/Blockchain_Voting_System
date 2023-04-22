@@ -25,7 +25,7 @@ CS 6381 Distributed Systems Principles Final Project
 ### Programming languages and Database Management System (DBMS) used
 
 1. JavaScript (ECMAScript 2023)
-2. MySQL (MySQL Community Edition 8.0.27)
+2. MySQL (MySQL Community Edition 8.0.33)
 3. Python (3.11.2)
 
 ### Frameworks used
@@ -46,7 +46,7 @@ CS 6381 Distributed Systems Principles Final Project
 
 ## How to build this software
 
-### 1. Please make sure you have downloaded MySQL (v8.0.27).
+### 1. Please make sure you have downloaded MySQL (v8.0.33).
 
 * Here is the URL for downloading the MySQL installer for Windows: https://dev.mysql.com/downloads/installer/
 * Here is the URL that shows the instructions to install MySQL on macOS: https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation.html 
@@ -63,45 +63,9 @@ pip3 install Werkzeug
 
 ### 3. Deployment method
 
-#### We will use Heroku to deploy the Flask. Note that:
+#### We will use Netlify to deploy the Flask. Note that:
  1. Git must be installed since Heroku uses Git. Please install Git from this website unless you have already installed: https://git-scm.com/downloads
  2. Python must be installed to use Flask. Please install Python 3.11.2 from this website unless you have already installed: https://www.python.org/downloads/
-
-#### To install Heroku,
- 1. Open the Heroku website. Here is the link for the Heroku website: https://www.heroku.com/
- 2. Sign up a Heroku account.
- 3. Install Heroku command-line interface (CLI) in your Terminal by following the instructions from this website: https://devcenter.heroku.com/articles/heroku-cli
- 
- #### To use Heroku for deploying our application,
-1. Make sure you have already installed Flask and Gunicorn. Check "How to build software" section to refer the installation processes for each of them.
-2. Refer "Instructions for checking out the latest stable version" to download all the files needed to build this software.
-3. Open the terminal and move to the folder directory which contains all the files for this project.
-4. Login to your Heroku account in the terminal.
-  ```
- heroku login
- ```
-5. Use Procfile, requirements.txt and runtime.txt given in the file.
-6. Go to Heroku website again and create an application (name: mastersql).
-7. Clone the repository using Git.  
- ```
- heroku git:clone -a Blockchain_Voting_System
- ```
-8. Now a folder named 'simayi' has been created. Inside this folder put all the files needed to deploy this project. 
-9. Next, move to this folder in the terminal.
- ```
- cd Blockchain_Voting_System
- ```
-10. Then, input the following in the terminal:
- ```
- heroku git:remote -a "simayi"
- git add .
- git commit -am "type whatever you wanna say here"
- git push heroku HEAD:master
-```
-11. If the following steps run successfully, the website URL will be printed in the console. 
-```
-https://simayi.herokuapp.com/
-```
 
 ## How to test this software
 
