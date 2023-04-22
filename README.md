@@ -93,7 +93,7 @@ pip3 install Werkzeug
  ```
 10. Then, input the following in the terminal:
  ```
- heroku git:remote -a "Simayi"
+ heroku git:remote -a "simayi"
  git add .
  git commit -am "type whatever you wanna say here"
  git push heroku HEAD:master
