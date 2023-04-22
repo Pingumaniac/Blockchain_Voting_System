@@ -58,10 +58,6 @@ We will implement a web-based blockchain voting system that
 3. PyMySQL (v1.0.3)
 4. WerkZeug (v2.2.3)
 
-## Instructions for checking out the latest stable version
-
-* TBU
-
 ## How to build this software
 
 ### 1. Please make sure you have downloaded MySQL (v8.0.33).
