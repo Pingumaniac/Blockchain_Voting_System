@@ -2,7 +2,7 @@
 -- Alex, please finalize how will you design the database.
 -- Guess it will be different from the ER diagram that I have designed.
 
-CREATE TABLE IF NOT EXIStS sys.Users (
+CREATE TABLE IF NOT EXISTS sys.Users (
     userID INTEGER,
     userName VARCHAR(256) NOT NULL,
     password VARCHAR(256) NOT NULL,
