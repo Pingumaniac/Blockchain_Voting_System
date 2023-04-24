@@ -6,7 +6,7 @@ class DB():
     # Seems better to stick with SQLite
     def __init__(self):
         self.conn = pymysql.connect(
-                    host =  'database-1.cvdqzts6zczz.us-east-1.rds.amazonaws.com',
+                    host =  'database-1.cj5a1jigdz45.us-east-2.rds.amazonaws.com',
                     port = 3306,
                     user = 'GloriousPingu',
                     password = 'TheGloriousPinguEmpire',
@@ -17,7 +17,7 @@ class DB():
     def connectDB(self):
         if self.conn.open != True:
             self.conn = pymysql.connect(
-                host =  'database-1.cvdqzts6zczz.us-east-1.rds.amazonaws.com',
+                host =  'database-1.cj5a1jigdz45.us-east-2.rds.amazonaws.com',
                 port = 3306,
                 user = 'GloriousPingu',
                 password = 'TheGloriousPinguEmpire',
