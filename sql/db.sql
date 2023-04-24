@@ -3,7 +3,7 @@
 -- Guess it will be different from the ER diagram that I have designed.
 
 CREATE TABLE IF NOT EXISTS sys.Users (
-    userID INTEGER,
+    userID VARCHAR(256) NOT NULL,
     userName VARCHAR(256) NOT NULL,
     password VARCHAR(256) NOT NULL,
     fullName VARCHAR(1000) NOT NULL,
