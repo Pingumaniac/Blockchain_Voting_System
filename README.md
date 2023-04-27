@@ -88,6 +88,18 @@ pip3 install Werkzeug
 ```
 python3 app.py
 ```
+The following (perhaps the port number can differ from this) will appear. 
+```
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 749-499-479
+```
 * Now, you can test various functionalities and non-functional requirements. 
 * Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/Blockchain_Voting_System/issues
 
