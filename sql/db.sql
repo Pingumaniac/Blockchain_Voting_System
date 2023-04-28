@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS sys.Candidates (
     age INTEGER,
     gender BOOLEAN NOT NULL,
     pictureURL VARCHAR(65535) NOT NULL,
-    partyID VARCHAR(256) NOT NULL
-    PRIMARY KEY (candidateID)
+    partyID VARCHAR(256) NOT NULL,
+    PRIMARY KEY (candidateID),
     FOREIGN KEY (candidateID) REFERENCES Users(userID) ON DELETE NO ACTION,
     FOREIGN KEY (fullName) REFERENCES Users(fullName) ON DELETE NO ACTION,
     FOREIGN KEY (partyID) REFERENCES Parties(partyID) ON DELETE NO ACTION
