@@ -78,7 +78,7 @@ pip3 install Werkzeug
 ### 3. Deployment method
 
 #### We will use Netlify to deploy the Flask. Note that:
- 1. Git must be installed since Heroku uses Git. Please install Git from this website unless you have already installed: https://git-scm.com/downloads
+ 1. Git must be installed since Netlify uses Git. Please install Git from this website unless you have already installed: https://git-scm.com/downloads
  2. Python must be installed to use Flask. Please install Python 3.11.2 from this website unless you have already installed: https://www.python.org/downloads/
 
 ## How to test this software
