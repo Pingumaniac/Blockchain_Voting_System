@@ -24,3 +24,8 @@ def create_elections():
 def my_elections():
     if request.method == 'GET':
         return render_template('/elections/my_elections.html', userName = g.userName)
+    
+@election_pages.route('/elections/view_details', methods = ['GET'])
+def view_election_details():
+    if request.method == 'GET':
+        return render_template('/elections/view_election_details.html', userName = g.userName)
