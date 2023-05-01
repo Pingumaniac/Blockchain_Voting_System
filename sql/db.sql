@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS sys.Users (
     fullName VARCHAR(1000) NOT NULL,
     email VARCHAR(1000) NOT NULL,
     publicKey VARCHAR(256) NOT NULL,
-    privateKey VARCHAR(256) NOT NULL,
+    privateKey VARCHAR(256),
     PRIMARY KEY (userID)
 );
 
