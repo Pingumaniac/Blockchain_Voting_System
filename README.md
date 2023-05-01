@@ -53,10 +53,11 @@ We will implement a web-based blockchain voting system that
 
 ### Python libraries and 3rd party packages used
 
-1. Flask-Bootstrap (v3.3.7.1)
-2. Gunicorn (v20.1.0)
-3. PyMySQL (v1.0.3)
-4. WerkZeug (v2.2.3)
+1. cryptography (40.0.2)
+2. Flask-Bootstrap (v3.3.7.1)
+3. Gunicorn (v20.1.0)
+4. PyMySQL (v1.0.3)
+5. WerkZeug (v2.2.3)
 
 ## How to build this software
 
@@ -68,6 +69,7 @@ We will implement a web-based blockchain voting system that
 ### 2. Install the following python packages using pip in the terminal:
 
 ```
+pip3 install cryptography
 pip3 install flask 
 pip3 install Flask-Bootstrap
 pip3 install gunicorn
