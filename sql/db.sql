@@ -16,8 +16,8 @@ CREATE TABLE IF NOT EXISTS sys.Users (
 
 CREATE TABLE IF NOT EXISTS sys.Elections (
     electionID VARCHAR(256) NOT NULL,
-    title VARCHAR(65535) NOT NULL,
-    startDate DATE NOT NULL,
+    prompt MEDIUMTEXT NOT NULL,
+    privateKey VARCHAR(256),
     endDate DATE NOT NULL,
     userID VARCHAR(256) NOT NULL,
     PRIMARY KEY (electionID),
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS sys.Elections (
 
 CREATE TABLE IF NOT EXISTS sys.Parties (
     partyID VARCHAR(256) NOT NULL,
-    partyName VARCHAR(65535) NOT NULL,
+    partyName MEDIUMTEXT NOT NULL,
     PRIMARY KEY (partyID)
 );
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS sys.Candidates (
     fullName VARCHAR(1000) NOT NULL,
     age INTEGER,
     gender BOOLEAN NOT NULL,
-    pictureURL VARCHAR(65535) NOT NULL,
+    pictureURL MEDIUMTEXT NOT NULL,
     partyID VARCHAR(256) NOT NULL,
     PRIMARY KEY (candidateID),
     FOREIGN KEY (partyID) REFERENCES Parties(partyID) ON DELETE NO ACTION
