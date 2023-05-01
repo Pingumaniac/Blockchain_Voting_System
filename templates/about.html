@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="container">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h3 class="display-4 text-center">About <strong>Simayi</strong></h3>
+                </div>
+                <div class="card-body">
+                    <div class="list-group-flush">
+                        <div class="list-group-item" id="summary">
+                            <h3>Summary</h3>
+                            <br>
+                            <h5>A web-based blockchain voting application for Spring 2023 CS 6381 Final Project at Vanderbilt University.</h5>
+                        </div>
+                        <div class="list-group-item" id="aboutMembers">
+                            <h3>About Members</h3>
+                            <br>
+                            <h5>Name: Young-jae Moon</h5>
+                            <ul>
+                                <li>M.Sc. in computer science and Engineering Graduate Fellowship Recipient at
+                                    Vanderbilt University (January 2023 - December 2024)</li>
+                                <li>
+                                    <address>Email: <a href="mailto:youngjae.moon@Vanderbilt.Edu"
+                                            class="text-success">youngjae.moon@Vanderbilt.Edu</a>
+                                    </address>
+                                </li>
+                            </ul>
+                            <br>
+                            <h5>Name: Alex Richardson</h5>
+                            <ul>
+                                <li>M.Sc./Ph.D. in computer science and Engineering Graduate Fellowship Recipient at
+                                    Vanderbilt University</li>
+                                <li>
+                                    <address>Email: <a href="mailto:william.a.richardson@vanderbilt.edu"
+                                        class="text-success">william.a.richardson@vanderbilt.edu</a>
+                                    </address>
+                                </li>
+                            </ul>
+                            <br>
+                            <h5>Name: Azhar Hasan</h5>
+                            <ul>
+                                <li>M.Sc./Ph.D. in computer science and Engineering Graduate Fellowship Recipient at
+                                    Vanderbilt University</li>
+                                <li>
+                                    <address>Email: <a href="mailto:azhar.hasan@vanderbilt.edu"
+                                            class="text-success">azhar.hasan@vanderbilt.edu</a>
+                                    </address>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list-group-item" id="aboutAdvisors">
+                            <h3>About Advisors</h3>
+                            <br>
+                            <h5>Name: Professor Aniruddha Gokhale</h5>
+                            <ul>
+                                <li>Tenured Professor of Computer Science at Vanderbilt University</li>
+                            </ul>
+                        </div>
+                        <div class="list-group-item" id="project_goals">
+                            <h3>Project Goals</h3>
+                            <br>
+                            <h5>We will implement a web-based blockchain voting system that</h5>
+                            <ol>
+                                <li class="lift">allows for people to create arbitrary elections and answer them</li>
+                                <li class="lift">while storing the information in several redundant nodes as per a
+                                    standard blockchain with each block in the chain either a created election or a user casting vote</li>
+                                <li class="lift"> with several backend nodes maintaining chains separately</li>
+                                <li class="lift">heavily based on the original bitcoin paper for simplicity.</li>
+                            </ol>
+                        </div>
+                        <div class="list-group-item" id="kpi">
+                            <h3>Key Performance Indicators (KPI)</h3>
+                            <br>
+                            <ol>
+                                <li class="lift">Blockchain chain agreement</li>
+                                <li class="lift">Performance</li>
+                                <li class="lift">Decentralisation</li>
+                                <li class="lift">Load balancing</li>
+                                <li class="lift">Validation of System Reliability with Malicious Nodes</li>
+                                <li class="lift">Transparency</li>
+                                <li class="lift">Consensus</li>
+                            </ol>
+                        </div>
+                        <div class="list-group-item" id="technologies">
+                            <h3>Tools and technologies</h3>
+                            <br>
+                            <h5>Programming languages and Database Management System (DBMS) used:</h5>
+                            <ol>
+                                <li class="lift">JavaScript (ECMAScript 2023)</li>
+                                <li class="lift">MySQL (MySQL Community Edition 8.0.32)</li>
+                                <li class="lift">Python (v3.11.2)</li>
+                            </ol>
+                            <br>
+                            <h5>Frameworks used:</h5>
+                            <ol>
+                                <li class="lift">Bootstrap front-end framework (v5.3)</li>
+                                <li class="lift">Flask framework (v2.2.3)</li>
+                            </ol>
+                            <br>
+                            <h5>Python libraries and 3rd party packages used:</h5>
+                            <ol>
+                                <li class="lift">Flask-Bootstrap (v3.3.7.1)</li>
+                                <li class="lift">gunicorn (v20.1.0)</li>
+                                <li class="lift">PyMySQL (v1.0.3)</li>
+                                <li class="lift">WerkZeug (v1.0.1)</li>
+                            </ol>
+                            <br>
+                            <h5>External Storage used:</h5>
+                            <ol>
+                                <li class="lift">Amazon Relational Database Service (RDS)</li>
+                            </ol>
+                        </div>
+                        <div class="list-group-item" id="bugTracking">
+                            <h3>Bug tracking</h3>
+                            <br>
+                            <h5>All users can view and report a bug in "GitHub Issues" of
+                                <a href="https://github.com/Pingumaniac/Blockchain_Voting_System/issues"
+                                    class="text-success">our
+                                    repository</a>.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

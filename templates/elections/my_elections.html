@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Import Orbit javascript library. For further info, check: https://docs.withorbit.com/ -->
+<script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
+
+<!-- Page Content -->
+<section>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="card shadow">
+                    <!-- Collapse -->
+                    <div class="collapse d-md-block" id="sidenavCollapse">
+                        <div class="card-header">
+                            <h4>Sections</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list list">
+                                <li class="list-item lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.past_elections') }}">Past elections</a></li>
+                                <li class="list-item lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.current_elections') }}">Current elections</a></li>
+                                <li class="list-item active lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.my_elections') }}">My elections</a></li>
+                                <li class="list-item lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.create_elections') }}">Create elections</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h4>My elections</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <table class="table table-stripped table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Election Name</th>
+                                        <th scope="col">Election Prompt</th>
+                                        <th scope="col">Number of Yes votes</th>
+                                        <th scope="col">Number of No votes</th>
+                                        <th scope="col">Link</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>About Pingu</td>
+                                        <td>Is Pingu made up of clay?</td>
+                                        <td>111117</td>
+                                        <td>222212</td>
+                                        <td><a href="{{ url_for('election_pages.view_election_details') }}"><button style="float: right" type="button"
+                                            class="btn btn-sn btn-outline-success btn-sm lift">View</button></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td>About Pingu's intelligence</td>
+                                        <td>Is Pingu smart?</td>
+                                        <td>112129</td>
+                                        <td>212</td>
+                                        <td><a href="{{ url_for('election_pages.view_election_details') }}"><button style="float: right" type="button"
+                                            class="btn btn-sn btn-outline-success btn-sm lift">View</button></a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
