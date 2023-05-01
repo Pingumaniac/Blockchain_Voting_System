@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section>
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="container">
+        <div class="card shadow">
+          <div class="card-header">
+            <h4>Delete account permanently</h4>
+          </div>
+          <div class="card-body">
+            <form method="POST" , action="{{ url_for('my_pages.delete_account') }}">
+              <div class="list-group list-group-flush">
+                <div class="list-group-item">
+                  <h5>Your username:</h5>
+                  <br>
+                  <input type="text" class="form-control" name="currentID" id="currentID"
+                    placeholder="Enter your username">
+                  <br />
+                  <br />
+                  <h5>Current password:</h5>
+                  <br>
+                  <input type="password" class="form-control" name="currentPassword" id="currentPassword"
+                    placeholder="Enter your current password">
+                  <br />
+                  <br />
+                  <h5>Confirm your password:</h5>
+                  <br>
+                  <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                    placeholder="Confirm your password">
+                  <br />
+                  <button style="float: right; margin-left: 5px" type="submit"
+                    class="btn btn-outline-danger btn-sm lift">Submit</button>
+                  <a href="{{ url_for('my_pages.mypage') }}"><button style="float: right" type="button"
+                      class="btn btn-outline-success btn-sm lift">Cancel</button></a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
