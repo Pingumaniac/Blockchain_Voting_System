@@ -23,20 +23,3 @@ CREATE TABLE IF NOT EXISTS sys.Elections (
     PRIMARY KEY (electionID),
     FOREIGN KEY (userID) REFERENCES Users(userID) ON DELETE NO ACTION
 );
-
-CREATE TABLE IF NOT EXISTS sys.Votes (
-    voteID VARCHAR(256) NOT NULL,
-    electionID VARCHAR(256) NOT NULL,
-    candidateID VARCHAR(256) NOT NULL,
-    PRIMARY KEY (voteID),
-    FOREIGN KEY (electionID) REFERENCES Elections(electionID) ON DELETE NO ACTION,
-    FOREIGN KEY (candidateID) REFERENCES Candidates(candidateID) ON DELETE NO ACTION
-);
-
-CREATE TABLE IF NOT EXISTS sys.CandidatesVotersPairings (
-    candidateID VARCHAR(256) NOT NULL,
-    voterID VARCHAR(256) NOT NULL,
-    PRIMARY KEY (candidateID, voterID),
-    FOREIGN KEY (candidateID) REFERENCES Candidates(candidateID) ON DELETE NO ACTION,
-    FOREIGN KEY (voterID) REFERENCES Users(userID) ON DELETE NO ACTION
-);
