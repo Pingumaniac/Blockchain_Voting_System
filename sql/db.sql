@@ -20,6 +20,8 @@ CREATE TABLE IF NOT EXISTS sys.Elections (
     privateKey VARCHAR(256),
     endDate DATE NOT NULL,
     userID VARCHAR(256) NOT NULL,
+    yesVotes INT,
+    noVotes INT,
     PRIMARY KEY (electionID),
     FOREIGN KEY (userID) REFERENCES Users(userID) ON DELETE NO ACTION
 );
