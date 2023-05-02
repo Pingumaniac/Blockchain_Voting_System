@@ -78,5 +78,4 @@ def submit_create_election_request():
 def view_election_details(electionTitle):
     if request.method == 'GET':
         election_details = g.db.getElectionDetails(electionTitle)
-        json_details = json.dumps(election_details, default=custom_serializer)
-        return render_template('/elections/view_election_details.html', userName = g.userName, election_details = json_details)
+        return render_template('/elections/view_election_details.html', userName = g.userName, election_details = election_details)
