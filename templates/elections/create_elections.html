@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Import Orbit javascript library. For further info, check: https://docs.withorbit.com/ -->
+<script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
+
+<!-- Page Content -->
+<section>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="card shadow">
+                    <!-- Collapse -->
+                    <div class="collapse d-md-block" id="sidenavCollapse">
+                        <div class="card-header">
+                            <h4>Sections</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="card-list list">
+                                <li class="list-item lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.past_elections') }}">Past elections</a></li>
+                                <li class="list-item lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.current_elections') }}">Current elections</a>
+                                </li>
+                                <li class="list-item lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.my_elections') }}">My elections</a></li>
+                                <li class="list-item active lift"><a class="list-link text-reset"
+                                        href="{{ url_for('election_pages.create_elections') }}">Create elections</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="card shadow">
+                    <div class="card-header">
+                        <h4>Create elections</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item">
+                                <label class="form-label" for="text">
+                                    <h3>Election title (256 characters maximum and shall be unique)</h3>
+                                </label>
+                                <br>
+                                <br>
+                                <input type="text" class="form-control" name="electionTitle" id="electionTitle"
+                                    placeholder="Enter the title of the election." />
+                                <br>
+                                <h5>Characters (with spaces):
+                                    <span class="titleCharacterCount" name="titleCharacterCount"
+                                        id="titleCharacterCount"></span>
+                                </h5>
+                            </div>
+                            <div class="list-group-item" id="formType">
+                                <label class="form-label" for="textType">
+                                    <h3>Election Prompt</h3>
+                                </label>
+                                <br>
+                                <br>
+                                <input type="text" class="form-control" name="electionPrompt" id="electionPrompt"
+                                    placeholder="Enter the prompt." />
+                                <br>
+                                <h5>Characters (with spaces):
+                                    <span class="promtCharacterCount" name="promptCharacterCount"
+                                        id="promptCharacterCount"></span>
+                                </h5>
+                            </div>
+                            <!--
+                            <div class="list-group-item" id="formType">
+                                <label class="form-label" for="textType">
+                                    <h3>Enter an election user name</h3>
+                                </label>
+                                <br>
+                                <br>
+                                <input type="text" class="form-control" name="electionUserName" id="electionUserName"
+                                    placeholder="Enter the election username." />
+                                <br>
+                            </div>
+                            -->
+                            <div class="list-group-item" id="formType">
+                                <label class="form-label" for="textType">
+                                    <h3>Enter an election private key</h3>
+                                </label>
+                                <br>
+                                <br>
+                                <input type="text" class="form-control" name="electionPK" id="electionPK"
+                                    placeholder="Enter the election private key." />
+                                <br>
+                            </div>
+                            <div class="list-group-item" id="formType">
+                                <label class="form-label" for="textType">
+                                    <h3>Enter a due date for the election</h3>
+                                </label>
+                                <br>
+                                <br>
+                                <input type="date" class="form-control" id="datepicker">
+                                <br>
+                            </div>
+                            <div class="list-group-item">
+                                <button style="float: right; margin-left: 5px" type="button" onclick="createElection()"
+                                    class="btn btn-outline-danger btn-sm lift">Submit</button>
+                                <a href="{{ url_for('home') }}"><button style="float: right" type="button"
+                                        class="btn btn-outline-success btn-sm lift">Cancel</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Javascript -->
+<script src="{{ url_for('static', filename='assets/js/create_election.js') }}"></script>
+{% endblock %}
