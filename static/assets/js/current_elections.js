@@ -19,7 +19,7 @@ const noElection = () => {
     return html;
 }
 
-fetch('/get_my_elections', {
+fetch('/get_current_elections', {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json; charset=utf-8'
