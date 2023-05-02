@@ -10,15 +10,20 @@ electionTitle.addEventListener("input", increaseRow);
 let electionPrompt = document.getElementById("electionPrompt");
 electionPrompt.addEventListener("input", increaseRow);
 
+let electionPK = document.getElementById("electionPK");
+electionPK.addEventListener("input", increaseRow);
+
 let title = document.getElementById('title');
 let text = document.getElementById('text');
 
 let titleCharacterCount = document.getElementById('titleCharacterCount');
 let promptCharacterCount = document.getElementById('promptCharacterCount');
+let pkCharacterCount = document.getElementById('pkCharacterCount');
 
 let CharacterCount = () => {
     titleCharacterCount.innerHTML = electionTitle.value.length;
     promptCharacterCount.innerHTML = electionPrompt.value.length;
+    pkCharacterCount.innerHTML = electionPK.value.length;
     if (titleCharacterCount > 256) {
         titleCharacterCount.style.color = 'red';
     }
