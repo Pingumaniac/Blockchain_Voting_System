@@ -2,8 +2,6 @@ import pymysql
 import json # used for json.dumps() for REST API
 
 class DB():
-    # Note: MySQL connection to my Amazon RDS is not working
-    # Seems better to stick with SQLite
     def __init__(self):
         self.conn = pymysql.connect(
                     host =  'database-1.cj5a1jigdz45.us-east-2.rds.amazonaws.com',
@@ -94,5 +92,17 @@ class DB():
     def getMyElection(self, userID):
         query1 = 'SELECT * FROM Elections WHERE userID = (%s)'
         self.cursor.execute(query1, (userID, ))
+        myElectionTable = self.cursor.fetchall()
+        return myElectionTable
+    
+    def getCurrentElection(self, endDateInput):
+        query1 = 'SELECT * FROM Elections WHERE endDate >= (%s)'
+        self.cursor.execute(query1, (endDateInput))
+        myElectionTable = self.cursor.fetchall()
+        return myElectionTable
+
+    def getPastElection(self, endDateInput):
+        query1 = 'SELECT * FROM Elections WHERE endDate < (%s)'
+        self.cursor.execute(query1, (endDateInput))
         myElectionTable = self.cursor.fetchall()
         return myElectionTable
