@@ -72,7 +72,7 @@ def submit_create_election_request():
             return jsonify({"success": True, "message": "Election created successfully."})
         except Exception as e:
             return jsonify({"success": False, "message": "There was an error creating the election."})
-        
+
 @election_pages.route('/elections/view_details', methods = ['GET'])
 @election_pages.route('/elections/view_details/<string:electionTitle>', methods = ['GET'])
 def view_election_details(electionTitle):
@@ -80,4 +80,3 @@ def view_election_details(electionTitle):
         election_details = g.db.getElectionDetails(electionTitle)
         json_details = json.dumps(election_details, default=custom_serializer)
         return render_template('/elections/view_election_details.html', userName = g.userName, election_details = json_details)
-
