@@ -173,29 +173,6 @@ def signin():
             msg = 'Account does not exist.'
             flash(msg)
             return redirect(url_for('signin'))
-    
-    if request.method == 'POST':
-        userName = request.form.get('userName')
-        password = request.form.get('password')
-        accountExistence = g.db.getUserNameExistence(userName)[0]
-        
-        # Case: No corresponding account with the userName inputed
-        if accountExistence == 0:
-            msg = "There is no such account created with the username: " + str(userName) + "."
-            flash(msg)
-            return redirect(url_for('signin')) 
-        else:
-            accountID, accountPassword = g.db.getUserNameAndPassword(userName)
-            # Case: the user has entered its password correctly
-            if userName == accountID and check_password_hash(accountPassword, password):
-                session['userName'] = userName
-                g.userName = userName
-                return redirect(url_for('home'))
-            # Case: the user has not entered its password correctly.
-            elif userName == accountID:
-                msg = 'Incorrect password!'
-                flash(msg)
-                return redirect(url_for('signin')) 
             
 @app.route('/about', methods = ['GET'])
 def about():
