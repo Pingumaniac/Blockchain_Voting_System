@@ -40,6 +40,21 @@ def get_my_elections():
         jsonElectionTable = json.dumps(myElectionTable, default=custom_serializer)
         return jsonElectionTable
 
+    @election_pages.route('/get_current_elections', methods = ['GET'])
+def get_current_elections():
+    if request.method == 'GET':
+        current_date = date.today()
+        myElectionTable = g.db.getCurrentElection(current_date)
+        jsonElectionTable = json.dumps(myElectionTable, default=custom_serializer)
+        return jsonElectionTable
+
+@election_pages.route('/get_past_elections', methods = ['GET'])
+def get_past_elections():
+    if request.method == 'GET':
+        current_date = date.today()
+        myElectionTable = g.db.getPastElection(current_date)
+        jsonElectionTable = json.dumps(myElectionTable, default=custom_serializer)
+        return jsonElectionTable
 
 @election_pages.route('/submit_create_election_request', methods = ['POST'])
 def submit_create_election_request():
