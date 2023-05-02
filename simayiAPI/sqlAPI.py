@@ -106,3 +106,9 @@ class DB():
         self.cursor.execute(query1, (endDateInput))
         myElectionTable = self.cursor.fetchall()
         return myElectionTable
+    
+    def getElectionDetails(self, electionTitle):
+        query1 = 'SELECT * FROM Elections WHERE electionTitle = (%s)'
+        self.cursor.execute(query1, (electionTitle, ))
+        electionDetails = self.cursor.fetchone()
+        return electionDetails
