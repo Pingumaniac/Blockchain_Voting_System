@@ -85,7 +85,6 @@ pip3 install Werkzeug
 
 ## How to test this software
 
-* TBU
 * If you have decided to run the software in your local terminal, please move to the right folder and then enter the following:
 ```
 python3 app.py
