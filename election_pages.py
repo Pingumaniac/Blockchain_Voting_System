@@ -10,22 +10,22 @@ election_pages = Blueprint("election_pages", __name__, static_folder="static", t
 @election_pages.route('/elections/past', methods = ['GET'])
 def past_elections():
     if request.method == 'GET':
-        return render_template('/elections/past_elections.html', userName = g.userName)
+        return render_template('/elections/past_elections.html')
     
 @election_pages.route('/elections/current', methods = ['GET'])
 def current_elections():
     if request.method == 'GET':
-        return render_template('/elections/current_elections.html', userName = g.userName)
+        return render_template('/elections/current_elections.html')
 
 @election_pages.route('/my_elections/create', methods = ['GET'])
 def create_elections():
     if request.method == 'GET':
-        return render_template('/elections/create_elections.html', userName = g.userName)
+        return render_template('/elections/create_elections.html')
     
 @election_pages.route('/my_elections', methods = ['GET'])
 def my_elections():
     if request.method == 'GET':
-        return render_template('/elections/my_elections.html', userName = g.userName)
+        return render_template('/elections/my_elections.html')
 
 def custom_serializer(obj):
     if isinstance(obj, date):
@@ -78,4 +78,4 @@ def submit_create_election_request():
 def view_election_details(electionTitle):
     if request.method == 'GET':
         election_details = g.db.getElectionDetails(electionTitle)
-        return render_template('/elections/view_election_details.html', userName = g.userName, election_details = election_details)
+        return render_template('/elections/view_election_details.html', election_details = election_details)

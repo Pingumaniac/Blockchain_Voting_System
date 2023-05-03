@@ -15,7 +15,6 @@ app.register_blueprint(error_pages)
 app.register_blueprint(my_pages)
 app.register_blueprint(voting_pages)
 app.register_blueprint(election_pages)
-app.secret_key = "PinguPenguinPingu".encode('utf8')
 app.config['USE_SESSION_FOR_NEXT'] = True
 
 # Code for using flask-bootstrap
@@ -52,116 +51,51 @@ To check the cause of the bug,
 """
 @app.errorhandler(400)
 def bad_request(e):
-    return render_template('error/400.html', userName = g.userName), 400
+    return render_template('error/400.html'), 400
 
 #HTTP status code 404 is given when there is no such page for the given URL.
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('error/404.html', userName = g.userName), 404
+    return render_template('error/404.html'), 404
     
 @app.errorhandler(408)
 def request_timeout(e):
-    return render_template('error/408.html', userName = g.userName), 408
+    return render_template('error/408.html'), 408
 
 @app.errorhandler(410)
 def gone(e):
-    return render_template('error/410.html', userName = g.userName), 410
+    return render_template('error/410.html'), 410
 
 @app.errorhandler(429)
 def too_many_requests(e):
-    return render_template('error/429.html', userName = g.userName), 429
+    return render_template('error/429.html'), 429
 
 @app.errorhandler(431)
 def request_header_fields_too_large(e):
-    return render_template('error/431.html', userName = g.userName), 431
+    return render_template('error/431.html'), 431
 
 @app.errorhandler(451)
 def unavailable_for_legal_reasons(e):
-    return render_template('error/451.html', userName = g.userName), 451
+    return render_template('error/451.html'), 451
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    return render_template('error/500.html', userName = g.userName), 500
+    return render_template('error/500.html'), 500
 
 @app.errorhandler(503)
 def service_unavailable(e):
-    return render_template('error/503.html', userName = g.userName), 503
+    return render_template('error/503.html'), 503
 
 @app.route('/', methods = ['GET'])
 @app.route('/home', methods = ['GET'])
 def home():
     if request.method == 'GET':
-        return render_template('home.html', userName = g.userName)
+        return render_template('home.html')
 
-@app.route('/signout')
-def signout():
-    session.pop('userName', None)
-    g.db.disconnectDB() # Remove the connection with the database as there is no need after signing out
-    return redirect(url_for('home'))
-
-@app.route('/signup', methods =['GET'])
-def signup():
-    if request.method == 'GET':
-         return render_template('signup.html', userName = g.userName)
-
-@app.route('/signup_request', methods =['POST'])
-def signup_request():
-    if request.method == 'POST':
-        data = request.get_json()
-        userName = data['userName']
-        fullName = data['fullName']
-        password = data['password']
-        confirmPassword = data['confirmpassword']
-        email = data['email']
-        
-        encryptedPassword = generate_password_hash(password)
-        
-        accountExistence = g.db.getUserNameExistence(userName)[0]
-
-        # Case: There is already an account with same userName
-        if accountExistence == 1:
-            return jsonify({"success": False, "message": "There is already an account with the same username."})
-        # Case: the form has been filled out
-        else:
-            # userID = hashed userName
-            userID = hashlib.sha256(userName.encode()).hexdigest()
-            keyGenerator = BlockchainKeyGenerator()
-            publicKey, privateKey = keyGenerator.generate_keys()
-            g.db.addUser(userID, userName, encryptedPassword, fullName, email, publicKey, privateKey)
-            session['userName'] = userName
-            g.userName = userName
-            return jsonify({"success": True, "message": "You have successfully registered your account!"})
-           
-@app.route('/signin', methods =['GET'])
-def signin():
-    if request.method == 'GET':
-        return render_template('signin.html', userName = g.userName)
-
-@app.route('/signin_request', methods =['POST'])
-def signin_request():
-    if request.method == 'POST':
-        data = request.get_json()
-        userName = data['userName']
-        password = data['password']
-        
-        accountExistence = g.db.getUserNameExistence(userName)[0]
-        if accountExistence == 0:
-            return jsonify({"success": False, "message": "Account does not exist."})
-        
-        accountName, accountPassword = g.db.getUserNameAndPassword(userName)
-        if userName == accountName and check_password_hash(accountPassword, password):
-            session['userName'] = userName
-            g.userName = userName
-            return jsonify({"success": True, "message": "Login successful."})
-        elif userName == accountName:
-            return jsonify({"success": False, "message": "Wrong password."})
-        else:
-            return jsonify({"success": False, "message": "Wrong password."})
-            
 @app.route('/about', methods = ['GET'])
 def about():
     if request.method == 'GET':
-        return render_template('about.html', userName = g.userName)
+        return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
