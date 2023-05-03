@@ -40,7 +40,7 @@ def get_my_elections():
         jsonElectionTable = json.dumps(myElectionTable, default=custom_serializer)
         return jsonElectionTable
 
-    @election_pages.route('/get_current_elections', methods = ['GET'])
+@election_pages.route('/get_current_elections', methods = ['GET'])
 def get_current_elections():
     if request.method == 'GET':
         current_date = date.today()
