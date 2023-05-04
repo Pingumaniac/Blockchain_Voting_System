@@ -61,7 +61,7 @@ We will implement a web-based blockchain voting system that
 
 ## How to build this software
 
-### 1 Install the following python packages using pip in the terminal:
+### 1. Install the following python packages using pip in the terminal:
 
 ```
 pip3 install cryptography
