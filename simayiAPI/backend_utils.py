@@ -26,10 +26,13 @@ class Backend:
 		forked_block["transition"] = json.dumps(forked_block["transition"])
 		self.blockchain.commit_block(forked_block)
 		self.send_block(forked_block)
-	
+
+	def commit_forked_block_no_processing(self, forked_block):
+		self.blockchain.commit_block_no_processing(forked_block)
+
 	def send_block(self, forked_block):
 		for k in self.backend_configs:
-			folder, port = self.backend_configs["folder"], self.backend_configs["port"]
+			folder, port = self.backend_configs[k]["folder"], self.backend_configs[k]["port"]
 			if folder != self.root_folder:
 				url = f"{self.api_root}:{port}/share_block"
 				r = requests.get(url, params=forked_block)

@@ -159,6 +159,12 @@ class Blockchain:
 			connection.commit()
 			connection.close()
 
+	def commit_block_no_processing(self, block):
+                print(block)
+                self.access_lock.acquire()
+                self.base_commit_block(block)
+                self.access_lock.release()
+
 	def commit_block(self, block):
 		print(block)
 		self.access_lock.acquire()

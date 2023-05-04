@@ -24,15 +24,20 @@ def get_users():
 def get_elections():
 	return jsonify(internal_state.get_election_list())
 
+def unescape_json_string(str):
+	# bytes(request.args.get("state"), "utf-8").decode("unicode_escape")
+	return str
+
 @app.route('/share_block', methods=['GET'])
-def get_elections():
-	state = request.args.get("state")
-	transition = request.args.get("transition")
-	prev_hash = request.args.get("prev_hash")
-	new_hash = request.args.get("new_hash")
+def share_block():
+	state = unescape_json_string(request.args.get("state"))
+	transition = unescape_json_string(request.args.get("transition"))
+	prev_hash = unescape_json_string(request.args.get("prev_hash"))
+	new_hash = unescape_json_string(request.args.get("new_hash"))
 	nonce = int(request.args.get("nonce"))
 	forked_block = {'state': state, 'transition': transition, 'prev_hash': prev_hash, 'new_hash': new_hash, 'nonce': nonce}
-	internal_state.commit_forked_block(forked_block)
+	internal_state.commit_forked_block_no_processing(forked_block)
+	return jsonify({});
 
 @app.route('/add_election', methods=['GET'])
 def add_election():
