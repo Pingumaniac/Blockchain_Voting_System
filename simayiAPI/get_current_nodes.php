@@ -11,7 +11,7 @@ function get_all_data() {
     $link = "http://ransom.isis.vanderbilt.edu:".strval($value["port"]);
     $all_data[] = $link;
   }
-	$all_data = ['http://ransom.isis.vanderbilt.edu:5000'];
+	//$all_data = ['http://ransom.isis.vanderbilt.edu:5000'];
   return $all_data;
 }
 
