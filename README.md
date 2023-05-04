@@ -45,6 +45,7 @@ We will implement a web-based blockchain voting system that
 1. JavaScript (ECMAScript 2023)
 2. MySQL (MySQL Community Edition 8.0.33)
 3. Python (3.11.2)
+4. PHP
 
 ### Frameworks used
 
@@ -57,7 +58,6 @@ We will implement a web-based blockchain voting system that
 2. Flask-Bootstrap (v3.3.7.1)
 3. Gunicorn (v20.1.0)
 4. pysqlite3 (v0.5.0)
-5. WerkZeug (v2.2.3)
 
 ## How to build this software
 
@@ -74,7 +74,6 @@ pip3 install flask
 pip3 install Flask-Bootstrap
 pip3 install gunicorn
 pip3 install pysqlite3
-pip3 install Werkzeug
 ```
 
 ### 3. Deployment method
