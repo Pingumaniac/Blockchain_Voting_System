@@ -79,7 +79,7 @@ pip3 install pysqlite3
 
 ## How to test this software
 
-* If you have decided to run the software in your local terminal, please move to the right folder and then enter the following:
+If you have decided to run the software in your local terminal, please move to the right folder and then enter the following:
 ```
 python3 app.py
 ```
