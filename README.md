@@ -56,7 +56,7 @@ We will implement a web-based blockchain voting system that
 1. cryptography (40.0.2)
 2. Flask-Bootstrap (v3.3.7.1)
 3. Gunicorn (v20.1.0)
-4. PyMySQL (v1.0.3)
+4. pysqlite3 (v0.5.0)
 5. WerkZeug (v2.2.3)
 
 ## How to build this software
@@ -73,7 +73,7 @@ pip3 install cryptography
 pip3 install flask 
 pip3 install Flask-Bootstrap
 pip3 install gunicorn
-pip3 install PyMySQL
+pip3 install pysqlite3
 pip3 install Werkzeug
 ```
 
