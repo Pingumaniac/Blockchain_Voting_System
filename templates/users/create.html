@@ -1,15 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
+<div class="py-5 container">
     <h2>Add User</h2>
-    <label for="username">Choose a username:</label>
-    <input type="text" id="username" name="username"/>
-    <br/>
-    <label for="public_key">Choose a public key:</label>
-    <textarea id="public_key" name="public_key" rows="4" cols="50">
-    </textarea>
-    <br/>
-    <button type="button" id="user_add" onclick="add_user()">Add user!</button>
+    <div class="form-group">
+      <label for="username">Choose a username:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        name="username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="public_key">Choose a public key:</label>
+      <textarea
+        class="form-control"
+        id="public_key"
+        name="public_key"
+        rows="4"
+        cols="50"
+      ></textarea>
+    </div>
+    <button
+      type="button"
+      class="btn btn-success"
+      id="user_add"
+      onclick="add_user()"
+    >
+      Add user!
+    </button>
 </div>
 <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 {% endblock %}

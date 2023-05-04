@@ -4,31 +4,50 @@
 <script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
 
 <!-- Page Content -->
-<div class="container">
+<div class="py-5 container">
+    <h1>Elections</h1>
     <h2>View Elections</h2>
-    <button type="button" id="elections_refresh" onclick="refresh_elections()">Refresh elections!</button>
-    <table id="election_list">
-     <tr>
-         <th>Election name</th>
-         <th>Election prompt</th>
-         <th>User</th>
-         <th>Yes count</th>
-         <th>No count</th>
-     </tr>
-     <tr>
-         <th>Election name</th>
-         <th>Election prompt</th>
-         <th>User</th>
-         <th>Yes count</th>
-         <th>No count</th>
-     </tr>
-     <tr>
-         <th>Election name</th>
-         <th>Election prompt</th>
-         <th>User</th>
-         <th>Yes count</th>
-         <th>No count</th>
-     </tr>
+    <button
+          type="button"
+          class="btn btn-success"
+          id="elections_refresh"
+          onclick="refresh_elections()"
+    >
+    Refresh elections!
+    </button>
+    <table class="table mt-3">
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">Election name</th>
+            <th scope="col">Election prompt</th>
+            <th scope="col">User</th>
+            <th scope="col">Yes count</th>
+            <th scope="col">No count</th>
+          </tr>
+        </thead>
+        <tbody id="election_list">
+          <tr>
+            <td>Election name</td>
+            <td>Election prompt</td>
+            <td>User</td>
+            <td>Yes count</td>
+            <td>No count</td>
+          </tr>
+          <tr>
+            <td>Election name</td>
+            <td>Election prompt</td>
+            <td>User</td>
+            <td>Yes count</td>
+            <td>No count</td>
+          </tr>
+          <tr>
+            <td>Election name</td>
+            <td>Election prompt</td>
+            <td>User</td>
+            <td>Yes count</td>
+            <td>No count</td>
+          </tr>
+        </tbody>
     </table>
 </div>
 

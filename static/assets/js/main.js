@@ -103,7 +103,7 @@ async function refresh_users() {
 	let current_users = await getCurrentUsers();
 	let user_table = document.getElementById("user_list");
 	await removeAllChildren(user_table);
-	await generateUserTableEntry(user_table, "Username", "Decryption (public) key");
+	//await generateUserTableEntry(user_table, "Username", "Decryption (public) key");
 	for (const entry of current_users) {
 		await generateUserTableEntry(user_table, entry.username, entry.public_key);
 	}
@@ -172,7 +172,7 @@ async function refresh_elections() {
 	let elections = await getCurrentElections();
 	let election_table = document.getElementById("election_list");
 	await removeAllChildren(election_table);
-	await generateElectionTableEntry(election_table, "Election name", "Election prompt", "User", "Yes count", "No count");
+	//await generateElectionTableEntry(election_table, "Election name", "Election prompt", "User", "Yes count", "No count");
 	for (const entry of elections) {
 			await generateElectionTableEntry(election_table, entry.name, entry.prompt, entry.username, entry.yays.toString(), entry.nays.toString());
 	}

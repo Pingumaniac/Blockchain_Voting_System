@@ -3,24 +3,60 @@
 <!-- Import Orbit javascript library. For further info, check: https://docs.withorbit.com/ -->
 <script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
 
-<!-- Page Content -->
-<div class="container">
-    <h2>Create Election</h2>
-    <label for="election_name">Choose an election name:</label>
-    <input type="text" id="election_name" name="election_name"/>
-    <br/>
-    <label for="election_prompt">Choose an election prompt:</label>
-    <input type="text" id="election_prompt" name="election_prompt"/>
-    <br/>
-    <label for="election_username">Choose an election username:</label>
-    <input type="text" id="election_username" name="election_username"/>
-    <br/>
-    <label for="election_private_key">Choose an election private-key:</label>
-    <textarea id="election_private_key" name="election_private_key" rows="4" cols="50">
-    </textarea>
-    <br/>
-    <button type="button" id="election_submit" onclick="submit_election()">Submit election!</button>
-</div>
+<div class="container card bg-dark-subtle">
+    <div class="card-body">
+      <h2 class="card-title">Create Election</h2>
+      <div class="form-group">
+        <label for="election_name">Choose an election name:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="election_name"
+          name="election_name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="election_prompt">Choose an election prompt:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="election_prompt"
+          name="election_prompt"
+        />
+      </div>
+      <div class="form-group">
+        <label for="election_username"
+          >Choose an election username:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="election_username"
+          name="election_username"
+        />
+      </div>
+      <div class="form-group">
+        <label for="election_private_key"
+          >Choose an election private-key:</label
+        >
+        <textarea
+          class="form-control"
+          id="election_private_key"
+          name="election_private_key"
+          rows="4"
+          cols="50"
+        ></textarea>
+      </div>
+      <button
+        type="button"
+        class="btn btn-success"
+        id="election_submit"
+        onclick="submit_election()"
+      >
+        Submit election!
+      </button>
+    </div>
+  </div>
 
 <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 {% endblock %}

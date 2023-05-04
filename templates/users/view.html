@@ -1,22 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h2>View Users</h2>
-    <button type="button" id="users_refresh" onclick="refresh_users()">Refresh users!</button>
-    <table id="user_list">
-    <tr>
-        <th>Username</th>
-        <th>Decryption (public) key</th>
-    </tr>
-    <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>qeyrwouwireyldrsghliasdlkgjdsg</td>
-    </tr>
-    <tr>
-        <td>Maria Anders</td>
-        <td>tqweuiotqeioputqpiouwte</td>
-    </tr>
-    </table>
+<div class="py-5 container">
+    <h1>Users</h1>
+    <div class="row">
+      <div class="col-12">
+        <h2>View Users</h2>
+        <button
+          class="btn btn-success"
+          type="button"
+          id="users_refresh"
+          onclick="refresh_users()"
+        >
+          Refresh users!
+        </button>
+        <div class="bg-light">
+          <table class="table mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Decryption (public) key</th>
+              </tr>
+            </thead>
+            <tbody id="user_list">
+              <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>qeyrwouwireyldrsghliasdlkgjdsg</td>
+              </tr>
+              <tr>
+                <td>Maria Anders</td>
+                <td>tqweuiotqeioputqpiouwte</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
 <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 {% endblock %}
