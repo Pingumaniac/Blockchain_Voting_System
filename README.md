@@ -43,7 +43,7 @@ We will implement a web-based blockchain voting system that
 ### Programming languages and Database Management System (DBMS) used
 
 1. JavaScript (ECMAScript 2023)
-2. MySQL (MySQL Community Edition 8.0.33)
+2. SQLite
 3. Python (3.11.2)
 4. PHP
 
