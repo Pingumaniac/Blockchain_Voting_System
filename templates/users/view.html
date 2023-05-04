@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>View Users</h2>
+    <button type="button" id="users_refresh" onclick="refresh_users()">Refresh users!</button>
+    <table id="user_list">
+    <tr>
+        <th>Username</th>
+        <th>Decryption (public) key</th>
+    </tr>
+    <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>qeyrwouwireyldrsghliasdlkgjdsg</td>
+    </tr>
+    <tr>
+        <td>Maria Anders</td>
+        <td>tqweuiotqeioputqpiouwte</td>
+    </tr>
+    </table>
+</div>
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+{% endblock %}

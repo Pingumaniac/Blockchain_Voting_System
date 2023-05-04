@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Import Orbit javascript library. For further info, check: https://docs.withorbit.com/ -->
+<script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
+
+<!-- Page Content -->
+<div class="container">
+    <h2>View Elections</h2>
+    <button type="button" id="elections_refresh" onclick="refresh_elections()">Refresh elections!</button>
+    <table id="election_list">
+     <tr>
+         <th>Election name</th>
+         <th>Election prompt</th>
+         <th>User</th>
+         <th>Yes count</th>
+         <th>No count</th>
+     </tr>
+     <tr>
+         <th>Election name</th>
+         <th>Election prompt</th>
+         <th>User</th>
+         <th>Yes count</th>
+         <th>No count</th>
+     </tr>
+     <tr>
+         <th>Election name</th>
+         <th>Election prompt</th>
+         <th>User</th>
+         <th>Yes count</th>
+         <th>No count</th>
+     </tr>
+    </table>
+</div>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+{% endblock %}

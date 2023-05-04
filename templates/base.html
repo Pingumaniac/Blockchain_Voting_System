@@ -40,6 +40,15 @@
             <!-- Brand -->
             <a class="navbar-brand lift" href="{{ url_for('home') }}"><strong>Simayi</strong></a>
 
+            <!-- post list here -->
+            <ul class="navbar-nav"></ul>
+            <div class="mx-5">
+                <label for="nodes">Node:</label>
+                <select name="nodes" id="nodes" class="w-50">
+                </select>
+                <button type="button" id="node_refresh" onclick="refresh_nodes()">Refresh</button>
+            </div>
+
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,23 +66,28 @@
                 <!-- Navigation -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item shadow lift">
-                        <a class="nav-link" href="{{ url_for('election_pages.past_elections') }}"> 
-                            Past elections 
-                        </a>
-                    </li>
-                    <li class="nav-item shadow lift">
-                        <a class="nav-link" href="{{ url_for('election_pages.current_elections') }}"> 
-                            Current elections 
-                        </a>
-                    </li>
-                    <li class="nav-item shadow lift">
-                        <a class="nav-link" href="{{ url_for('election_pages.my_elections') }}"> 
-                            My elections 
+                        <a class="nav-link" href="{{ url_for('election_pages.view_elections') }}"> 
+                            View Elections 
                         </a>
                     </li>
                     <li class="nav-item shadow lift">
                         <a class="nav-link" href="{{ url_for('election_pages.create_elections') }}"> 
-                            Create elections 
+                            Create Elections 
+                        </a>
+                    </li>
+                    <li class="nav-item shadow lift">
+                        <a class="nav-link" href="{{ url_for('election_pages.vote_elections') }}"> 
+                            Vote 
+                        </a>
+                    </li>
+                    <li class="nav-item shadow lift">
+                        <a class="nav-link" href="{{ url_for('user_pages.view_users') }}"> 
+                            View Users 
+                        </a>
+                    </li>
+                    <li class="nav-item shadow lift">
+                        <a class="nav-link" href="{{ url_for('user_pages.create_user') }}"> 
+                            Create User
                         </a>
                     </li>
                 </ul>

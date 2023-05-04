@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Import Orbit javascript library. For further info, check: https://docs.withorbit.com/ -->
+<script type="module" src="https://js.withorbit.com/orbit-web-component.js"></script>
+
+<!-- Page Content -->
+<section>
+    <div class="container">
+        <h1>Cast vote</h1>
+        <label for="election_vote_name">Choose an election name:</label>
+        <input type="text" id="election_vote_name" name="election_vote_name"/>
+        <br/>
+        <label for="election_vote_username">Choose an election username:</label>
+        <input type="text" id="election_vote_username" name="election_vote_username"/>
+        <br/>
+        <label for="election_vote_private_key">Choose an election private-key:</label>
+        <textarea id="election_vote_private_key" name="election_vote_private_key" rows="4" cols="50">
+        </textarea>
+        <br/>
+        <input type="radio" id="Yes" name="vote_value" value="yays">
+        <label for="yays">Yes</label><br/>
+        <input type="radio" id="No" name="vote_value" value="nays">
+        <label for="nays">No</label><br/>
+        <button type="button" id="election_vote_submit" onclick="submit_vote()">Submit vote!</button>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+{% endblock %}

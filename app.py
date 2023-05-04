@@ -3,8 +3,7 @@ from flask_bootstrap import Bootstrap
 from werkzeug.security import generate_password_hash, check_password_hash
 from simayiAPI.sqlAPI import DB
 from error_pages import error_pages
-from my_pages import my_pages
-from voting_pages import voting_pages # Perhaps not needed.
+from user_pages import user_pages
 from election_pages import election_pages
 from simayiAPI.BlockchainKeyGenerator import BlockchainKeyGenerator
 import hashlib
@@ -12,36 +11,12 @@ import hashlib
 # Codes for initialising the flask application
 app = Flask(__name__)
 app.register_blueprint(error_pages)
-app.register_blueprint(my_pages)
-app.register_blueprint(voting_pages)
+app.register_blueprint(user_pages)
 app.register_blueprint(election_pages)
 app.config['USE_SESSION_FOR_NEXT'] = True
 
 # Code for using flask-bootstrap
 bootstrap = Bootstrap(app) 
-
-"""
-function before_request is executed before the first request is made.
-There is a separate function called teardown_request which is executed once every request has been completed.
-Since teardown_request is not needed for this application, I have not created.
-e.g. if teardown_request is used to disconnect the database, every time the client has finished its request,
-the database will be disconnected and therefore have to reconnect the database whenever he or she makes a new request.
-
-g is a global variable for flask. Hence I have used the variable 
-1. g.db to maintain the connection til the client closes the web applicaiton,
-2. g.userName to store the userName and thereby not use try except method to check the userName for each page
-"""
-
-@app.before_request
-def before_request():
-    if 'db' not in g:
-        g.db = DB()
-    else:
-        g.db.connectDB()
-    if 'userName' in session:
-        g.userName = str(escape(session['userName']))
-    else:
-        g.userName = None
         
 """
 HTTP status code 400 is given when there is a bug while running the app locally.
