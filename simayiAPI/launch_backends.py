@@ -8,7 +8,7 @@ for k in conf_file:
     folder = conf_file[k]["folder"]
     port = conf_file[k]["port"]
     command = f"python3 backend_node.py {folder} {port}"
-    procs.append(Popen(command))
+    procs.append(Popen(command, shell=True))
 
 for p in procs:
     p.wait()
