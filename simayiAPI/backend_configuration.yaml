@@ -1,0 +1,31 @@
+backend_node1:
+  port: 5000
+  folder: backend_node1
+backend_node2:
+  port: 5001
+  folder: backend_node2
+backend_node3:
+  port: 5002
+  folder: backend_node3
+backend_node4:
+  port: 5003
+  folder: backend_node4
+backend_node5:
+  port: 5004
+  folder: backend_node5
+backend_node6:
+  port: 5005
+  folder: backend_node6
+backend_node7:
+  port: 5006
+  folder: backend_node7
+backend_node8:
+  port: 5007
+  folder: backend_node8
+backend_node9:
+  port: 5008
+  folder: backend_node9
+backend_node10:
+  port: 5009
+  folder: backend_node10
+
