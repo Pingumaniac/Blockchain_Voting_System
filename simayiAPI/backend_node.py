@@ -24,6 +24,16 @@ def get_users():
 def get_elections():
 	return jsonify(internal_state.get_election_list())
 
+@app.route('/share_block', methods=['GET'])
+def get_elections():
+	state = request.args.get("state")
+	transition = request.args.get("transition")
+	prev_hash = request.args.get("prev_hash")
+	new_hash = request.args.get("new_hash")
+	nonce = int(request.args.get("nonce"))
+	forked_block = {'state': state, 'transition': transition, 'prev_hash': prev_hash, 'new_hash': new_hash, 'nonce': nonce}
+	internal_state.commit_forked_block(forked_block)
+
 @app.route('/add_election', methods=['GET'])
 def add_election():
 	name = request.args.get("name")

@@ -1,9 +1,13 @@
 import json
+import requests
 from blockchain import Blockchain
+import yaml
 
 class Backend:
 	def __init__(self, root_folder):
 		self.root_folder = root_folder
+		self.backend_configs = yaml.safe_load(open("backend_configuration.yaml"))
+		self.api_root = "http://ransom.isis.vanderbilt.edu"
 		print(f"Storing persistent data for backend in {self.root_folder}")
 		self.blockchain = Blockchain(self.root_folder)
 
@@ -21,6 +25,14 @@ class Backend:
 		forked_block["state"] = json.dumps(forked_block["state"])
 		forked_block["transition"] = json.dumps(forked_block["transition"])
 		self.blockchain.commit_block(forked_block)
+		self.send_block(forked_block)
+	
+	def send_block(self, forked_block):
+		for k in self.backend_configs:
+			folder, port = self.backend_configs["folder"], self.backend_configs["port"]
+			if folder != self.root_folder:
+				url = f"{self.api_root}:{port}/share_block"
+				r = requests.get(url, params=forked_block)
 
 	def get_current_state(self):
 		data = self.get_head_block()
