@@ -1,6 +1,5 @@
 from flask import Flask, Blueprint, g, render_template, request, redirect, url_for, session, jsonify, flash, escape
 from flask_bootstrap import Bootstrap
-import pymysql
 
 user_pages = Blueprint("user_pages", __name__, static_folder="static", template_folder="templates")
 
