@@ -61,12 +61,7 @@ We will implement a web-based blockchain voting system that
 
 ## How to build this software
 
-### 1. Please make sure you have downloaded MySQL (v8.0.33).
-
-* Here is the URL for downloading the MySQL installer for Windows: https://dev.mysql.com/downloads/installer/
-* Here is the URL that shows the instructions to install MySQL on macOS: https://dev.mysql.com/doc/mysql-osx-excerpt/5.7/en/osx-installation.html 
-
-### 2. Install the following python packages using pip in the terminal:
+### 1 Install the following python packages using pip in the terminal:
 
 ```
 pip3 install cryptography
@@ -76,7 +71,7 @@ pip3 install gunicorn
 pip3 install pysqlite3
 ```
 
-### 3. Deployment method
+### 2. Deployment method
 
 #### We will use Netlify to deploy the Flask. Note that:
  1. Git must be installed since Netlify uses Git. Please install Git from this website unless you have already installed: https://git-scm.com/downloads
