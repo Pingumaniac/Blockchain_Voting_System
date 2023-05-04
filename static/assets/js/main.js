@@ -61,7 +61,7 @@ async function sign(private_key, data) {
 
 
 async function getCurrentNodes() {
-	let endpoint = root + "get_current_nodes.php";
+	let endpoint = rootPath + "get_current_nodes.php";
 	let node_name = document.getElementById("nodes").value;
   const response = await fetch(endpoint, { method: 'GET'});
   return await response.json();
@@ -81,7 +81,7 @@ async function refresh_nodes() {
 }
 
 async function getCurrentUsers() {
-	let endpoint = root + "get_current_users.php?";
+	let endpoint = rootPath + "get_current_users.php?";
 	let node_name = document.getElementById("nodes").value;
   const response = await fetch(endpoint + new URLSearchParams({
     node_name: node_name
@@ -111,7 +111,7 @@ async function refresh_users() {
 }
 
 async function AddUserRequest(username, public_key) {
-	let endpoint = root + "add_user.php?";
+	let endpoint = rootPath + "add_user.php?";
 	let node_name = document.getElementById("nodes").value;
   const response = await fetch(endpoint + new URLSearchParams({
     username: username,
@@ -140,7 +140,7 @@ async function add_user() {
 }
 
 async function getCurrentElections() {
-	let endpoint = root + "get_current_elections.php?";
+	let endpoint = rootPath + "get_current_elections.php?";
 	let node_name = document.getElementById("nodes").value;
   const response = await fetch(endpoint + new URLSearchParams({
     node_name: node_name
@@ -180,7 +180,7 @@ async function refresh_elections() {
 }
 
 async function AddElectionRequest(name, prompt, username, private_key) {
-	let endpoint = root + "add_election.php?";
+	let endpoint = rootPath + "add_election.php?";
 	let node_name = document.getElementById("nodes").value;
 	let signature = await sign(private_key, name + prompt + username);
 
@@ -216,7 +216,7 @@ async function submit_election() {
 }
 
 async function AddVoteRequest(name, username, private_key, vote) {
-	let endpoint = root + "add_vote.php?";
+	let endpoint = rootPath + "add_vote.php?";
 	let node_name = document.getElementById("nodes").value;
 	let signature = await sign(private_key, name + username + vote);
 

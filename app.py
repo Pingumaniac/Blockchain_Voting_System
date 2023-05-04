@@ -1,11 +1,9 @@
 from flask import Flask, Blueprint, g, render_template, request, redirect, url_for, session, jsonify, flash, escape
 from flask_bootstrap import Bootstrap
 from werkzeug.security import generate_password_hash, check_password_hash
-from simayiAPI.sqlAPI import DB
 from error_pages import error_pages
 from user_pages import user_pages
 from election_pages import election_pages
-from simayiAPI.BlockchainKeyGenerator import BlockchainKeyGenerator
 import hashlib
 
 # Codes for initialising the flask application
